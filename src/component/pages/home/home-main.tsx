@@ -1,4 +1,4 @@
-import img from "../../assets/img/images/IMG.png";
+import img from "../../../assets/img/images/IMG.png";
 
 const HomeMainTop = () => {
   return (

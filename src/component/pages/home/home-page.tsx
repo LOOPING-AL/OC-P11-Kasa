@@ -1,8 +1,8 @@
-import Header from "../header/header";
-import "../../assets/style/App.css";
-import HomeMainTop from "./home-main";
+import "../../../assets/style/App.css";
+import Footer from "../../ui/footer";
+import Header from "../../ui/header";
 import HomeMainBody from "./home-body";
-import Footer from "../footer/footer";
+import HomeMainTop from "./home-main";
 
 function App() {
   return (

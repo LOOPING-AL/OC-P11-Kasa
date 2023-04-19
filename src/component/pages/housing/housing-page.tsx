@@ -1,9 +1,6 @@
-import { useParams } from "react-router-dom";
-import data from "../../data/logements.json";
-import Footer from "../footer/footer";
-import Header from "../header/header";
+import Footer from "../../ui/footer";
+import Header from "../../ui/header";
 import HousingMainBody from "./housing-main";
-import { Logement } from "../../type/type";
 
 const HousingPage = () => {
   // const { logementId } = useParams();
