@@ -1,15 +1,15 @@
 import "../../../assets/style/App.css";
 import Footer from "../../ui/footer";
 import Header from "../../ui/header";
-import HomeMainBody from "./home-body";
-import HomeMainTop from "./home-main";
+import HomeMainBottom from "./home-main-bottom";
+import HomeMainTop from "./home-main-top";
 
 function App() {
   return (
     <div className="app">
       <Header />
       <HomeMainTop />
-      <HomeMainBody />
+      <HomeMainBottom />
       <Footer />
     </div>
   );

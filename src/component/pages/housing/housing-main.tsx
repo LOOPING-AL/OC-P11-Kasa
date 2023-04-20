@@ -1,7 +1,9 @@
 import { useParams } from "react-router-dom";
-import star from "../../../assets/img/icons/star.png";
 import data from "../../../data/logements.json";
 import { Logement } from "../../../type/type";
+import Cover from "../../ui/cover";
+import Dropdown from "../../ui/dropdown";
+import Star from "../../ui/star";
 import Tag from "../../ui/tag";
 
 const HousingMainBody = () => {
@@ -9,64 +11,59 @@ const HousingMainBody = () => {
   const logements: Logement[] = data;
   const logement = logements.find((logement) => logement.id === logementId);
 
-  return (
-    <div className="housing-body">
-      <img
-        src={logement?.cover}
-        alt={logement?.description}
-        className="housing-cover-img"
-      />
+  if (!logement) {
+    throw new Error("Id is not correct");
+  } else
+    return (
+      <div className="housing-body">
+        <Cover logement={logement} />
 
-      <section className="housing-section">
-        <div className="housing-body-left">
-          <h3 className="main-color">{logement?.title}</h3>
-          <h4 className="main-color">{logement?.location}</h4>
+        <section className="housing-section-top">
+          <div className="housing-body-left">
+            <h3 className="main-color">{logement.title}</h3>
+            <h4 className="main-color">{logement.location}</h4>
 
-          <div className="housing-body-left-tags">
-            {logement?.tags.map((tag) => {
-              return <Tag tag={tag} key={tag} />;
-            })}
+            <div className="housing-body-left-tags">
+              {logement.tags.map((tag) => {
+                return <Tag tag={tag} key={tag} />;
+              })}
+            </div>
           </div>
-        </div>
 
-        <div className="housing-body-right">
-          <div className="housing-body-righttop">
-            <div className="housing-body-hostname">
-              <h4 className="main-color">
-                {logement?.host.name.split(/ (.*)/s)[0]}
-              </h4>
-              <h4 className="main-color">
-                {logement?.host.name.split(/ (.*)/s)[1]}
-              </h4>
+          <div className="housing-body-right">
+            <div className="housing-body-righttop">
+              <div className="housing-body-hostname">
+                <h4 className="main-color">
+                  {logement.host.name.split(/ (.*)/s)[0]}
+                </h4>
+                <h4 className="main-color">
+                  {logement.host.name.split(/ (.*)/s)[1]}
+                </h4>
+              </div>
+
+              <img
+                className="housing-body-hostpicture"
+                src={logement.host.picture}
+                alt={logement.host.name}
+              />
             </div>
 
-            <img
-              className="housing-body-hostpicture"
-              src={logement?.host.picture}
-              alt={logement?.host.name}
-            />
+            <div className="housing-body-middle-rating">
+              {Star(Number(logement.rating))}
+            </div>
           </div>
-          <div className="housing-body-middle-rating">
-            {Star(Number(logement?.rating))}
+        </section>
+
+        <section className="section-dropdown">
+          <div className="dropdown-left">
+            <Dropdown title={"Description"} text={logement.description} />
           </div>
-        </div>
-      </section>
-    </div>
-  );
-};
-
-const Star = (rating: number) => {
-  const content = [];
-
-  for (let index = 0; index < 5; index++) {
-    if (index < rating) {
-      content.push(<img className="star star-color" src={star} />);
-    } else {
-      content.push(<img className="star" src={star} />);
-    }
-  }
-
-  return content;
+          <div className="dropdown-right">
+            <Dropdown title={"Equipement"} text={logement.equipments} />
+          </div>
+        </section>
+      </div>
+    );
 };
 
 export default HousingMainBody;

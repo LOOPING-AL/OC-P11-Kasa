@@ -32,6 +32,8 @@ h4 {
   font-weight: 500;
   font-size: 18px;
   margin: 0;
+  padding: 0;
+  vertical-align: middle;
 }
 p {
   margin: 0;
@@ -161,13 +163,105 @@ a {
   margin-left: 100px;
   margin-right: 100px;
 }
-.housing-cover-img {
-  border-radius: 25px;
+
+.housing-cover {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.housing-cover-arrow {
+  position: absolute;
+  top: 165px;
+  cursor: pointer;
+  z-index: 2;
+}
+.housing-cover-arrowleft {
+  left: 3%;
+}
+.housing-cover-arrowright {
+  right: 3%;
+}
+
+#second {
+  z-index: -1;
+}
+
+.housing-cover-images {
   height: 415px;
+}
+.housing-cover-img {
+  position: absolute;
+  border-radius: 25px;
+  height: 100%;
   width: 100%;
   object-fit: cover;
 }
-.housing-section {
+
+.cover-initial {
+  transform: translateX(100%);
+}
+
+.cover-goright {
+  animation: kf-cover-goright 0.4s ease-out;
+  transform: translateX(0%);
+}
+@keyframes kf-cover-goright {
+  0% {
+    transform-origin: left;
+    transform: translateX(0);
+  }
+  100% {
+    transform-origin: left;
+    transform: translateX(100%);
+  }
+}
+.cover-goleft {
+  animation: kf-cover-goleft 0.4s ease-out;
+  transform: translateX(0%);
+}
+@keyframes kf-cover-goleft {
+  0% {
+    transform-origin: right;
+    transform: translateX(0);
+  }
+  100% {
+    transform-origin: right;
+    transform: translateX(-100%);
+  }
+}
+
+.cover-arrivedright {
+  transform: translateX(100%);
+  animation: kf-cover-arrivedright 0.4s ease-out;
+}
+@keyframes kf-cover-arrivedright {
+  0% {
+    transform-origin: left;
+    transform: translateX(100%);
+  }
+  100% {
+    transform-origin: left;
+    transform: translateX(0);
+  }
+}
+
+.cover-arrivedleft {
+  transform: translateX(-100%);
+  animation: kf-cover-arrivedleft 0.4s ease-out;
+}
+@keyframes kf-cover-arrivedleft {
+  0% {
+    transform-origin: right;
+    transform: translateX(-100%);
+  }
+  100% {
+    transform-origin: right;
+    transform: translateX(0);
+  }
+}
+
+.housing-section-top {
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
@@ -187,19 +281,22 @@ a {
 }
 
 .tag {
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 3px;
   margin-right: 10px;
   margin-bottom: 20px;
   border-radius: 10px;
   height: 25px;
+  background-color: #ff6060;
+}
+.tag-text {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   color: white;
-  background-color: #ff6060;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 3px;
+  vertical-align: middle;
 }
 
 .housing-body-right {
@@ -239,4 +336,117 @@ a {
 }
 .star {
   margin-left: 15px;
+}
+
+.section-dropdown {
+  display: flex;
+  margin-top: 14px;
+  margin-bottom: 50px;
+}
+.dropdown-left {
+  width: 48%;
+  margin-right: 4%;
+}
+.dropdown-right {
+  width: 48%;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-top {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  top: -10px;
+  border-radius: 10px;
+  height: 52px;
+  background-color: #ff6060;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.dropdown-title {
+  margin-left: 2%;
+  color: white;
+}
+
+.dropdown-arrow {
+  width: 24px;
+  height: 14px;
+  margin-right: 2%;
+}
+.dropdown-bottom {
+  flex-direction: column;
+  z-index: 1;
+  top: 10px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 168%;
+  padding-top: 60px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 53px;
+  background-color: #f7f7f7;
+  border-radius: 0 0 10px 10px;
+}
+
+.dropdown-text-open {
+  animation: dropdown-text-bounce-in 0.4s ease-out;
+  transform: scaleY(1);
+}
+.dropdown-text-close {
+  transform: scaleY(0);
+  animation: dropdown-text-bounce-out 0.4s ease-out;
+}
+@keyframes dropdown-text-bounce-in {
+  0% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+  100% {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+}
+@keyframes dropdown-text-bounce-out {
+  0% {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+  100% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+}
+
+.dropdown-arrow-open {
+  animation: dropdown-arrow-bounce-in 0.4s ease-out;
+  transform: rotate(180deg);
+}
+.dropdown-arrow-close {
+  transform: rotate(0);
+  animation: dropdown-arrow-bounce-out 0.4s ease-out;
+}
+@keyframes dropdown-arrow-bounce-in {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+@keyframes dropdown-arrow-bounce-out {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }

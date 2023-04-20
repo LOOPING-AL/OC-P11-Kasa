@@ -4,7 +4,7 @@ import Thumb from "../../ui/thumb";
 
 const logements: Logement[] = data;
 
-const HomeMainBody = () => (
+const HomeMainBottom = () => (
   <div className="home-body">
     {logements.map((logement: Logement) => {
       return <Thumb logement={logement} key={logement.id} />;
@@ -12,4 +12,4 @@ const HomeMainBody = () => (
   </div>
 );
 
-export default HomeMainBody;
+export default HomeMainBottom;

@@ -13,6 +13,7 @@ const router = createBrowserRouter([
   {
     path: "logement/:logementId",
     element: <HousingPage />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "aPropos",
