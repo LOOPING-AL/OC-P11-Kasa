@@ -1,0 +1,130 @@
+.body {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.section_top {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.body_left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 6px;
+  gap: 8px;
+}
+
+.body_left_tags {
+  display: flex;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.body_right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: 50px;
+}
+
+.body_righttop {
+  display: flex;
+  align-items: center;
+}
+
+.body_hostname {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 10px;
+}
+
+.body_hostpicture {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.body_middle_rating {
+  margin-top: 27px;
+  width: 200px;
+}
+
+.section_dropdown {
+  display: flex;
+  margin-top: 14px;
+  margin-bottom: 50px;
+}
+.dropdown_left {
+  width: 48%;
+  margin-right: 4%;
+}
+.dropdown_right {
+  width: 48%;
+}
+
+@media only screen and (max-width: 950px) {
+  .body {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .section_top {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  .img {
+    height: 48px;
+  }
+  .header_title {
+    gap: 30px;
+  }
+  .body_right {
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: 0px;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .body_righttop {
+    order: 2;
+  }
+  .body_middle_rating {
+    margin-top: 0px;
+  }
+  .body_hostpicture {
+    width: 32px;
+    height: 32px;
+  }
+  .body_left_tags {
+    margin-top: 0px;
+  }
+  .section_dropdown {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .header_title {
+    gap: 10px;
+    padding-left: 10px;
+  }
+  .dropdown_left {
+    width: 100%;
+  }
+  .dropdown_right {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .body {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .img {
+    height: 43px;
+  }
+}

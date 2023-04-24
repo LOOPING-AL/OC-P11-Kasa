@@ -16,7 +16,7 @@ interface host {
   picture: string;
 }
 
-export interface aboutData {
+export interface AboutData {
   title: string;
   text: string;
 }

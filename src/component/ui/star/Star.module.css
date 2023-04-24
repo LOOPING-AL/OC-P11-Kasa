@@ -1,0 +1,16 @@
+.star {
+  margin-left: 15px;
+}
+
+.star_color {
+  filter: invert(49%) sepia(62%) saturate(3182%) hue-rotate(328deg)
+    brightness(110%) contrast(101%);
+}
+
+@media only screen and (max-width: 750px) {
+  .star {
+    margin-left: 0;
+    margin-right: 7px;
+    height: 13px;
+  }
+}

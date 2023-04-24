@@ -1,0 +1,132 @@
+.cover {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.number {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 2;
+  color: white;
+  bottom: 25px;
+}
+
+.cover_arrow {
+  position: absolute;
+  top: 167.5px;
+  cursor: pointer;
+  z-index: 2;
+}
+.cover_arrowleft {
+  left: 3%;
+}
+.cover_arrowright {
+  right: 3%;
+}
+
+.cover_second {
+  z-index: -1;
+}
+
+.cover_images {
+  height: 415px;
+}
+.cover_img {
+  position: absolute;
+  border-radius: 25px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.cover_initial {
+  transform: translateX(100%);
+}
+
+.cover_goright {
+  animation: kf-cover_goright 0.4s ease-out;
+  transform: translateX(0%);
+}
+@keyframes kf-cover_goright {
+  0% {
+    transform-origin: left;
+    transform: translateX(0);
+  }
+  100% {
+    transform-origin: left;
+    transform: translateX(100%);
+  }
+}
+.cover_goleft {
+  animation: kf-cover_goleft 0.4s ease-out;
+  transform: translateX(0%);
+}
+@keyframes kf-cover_goleft {
+  0% {
+    transform-origin: right;
+    transform: translateX(0);
+  }
+  100% {
+    transform-origin: right;
+    transform: translateX(-100%);
+  }
+}
+
+.cover_arrivedright {
+  transform: translateX(100%);
+  animation: kf-cover_arrivedright 0.4s ease-out;
+}
+@keyframes kf-cover_arrivedright {
+  0% {
+    transform-origin: left;
+    transform: translateX(100%);
+  }
+  100% {
+    transform-origin: left;
+    transform: translateX(0);
+  }
+}
+
+.cover_arrivedleft {
+  transform: translateX(-100%);
+  animation: kf-cover_arrivedleft 0.4s ease-out;
+}
+@keyframes kf-cover_arrivedleft {
+  0% {
+    transform-origin: right;
+    transform: translateX(-100%);
+  }
+  100% {
+    transform-origin: right;
+    transform: translateX(0);
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .cover_images {
+    height: 325px;
+  }
+  .cover_arrow {
+    top: 142.5px;
+    height: 40px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+}
+@media only screen and (max-width: 500px) {
+  .cover_images {
+    height: 255px;
+  }
+  .cover_arrow {
+    top: 117.5px;
+    height: 20px;
+  }
+  .number {
+    display: none;
+  }
+}
