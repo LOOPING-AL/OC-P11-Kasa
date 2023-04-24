@@ -1,3 +1,15 @@
-const APropos = () => <div>Page à propos</div>;
+import Footer from "../../ui/footer";
+import Header from "../../ui/header";
+import AboutMainBottom from "./about-main-bottom";
+import AboutMainTop from "./about-main-top";
 
-export default APropos;
+const About = () => (
+  <div className="page">
+    <Header />
+    <AboutMainTop />
+    <AboutMainBottom />
+    <Footer />
+  </div>
+);
+
+export default About;

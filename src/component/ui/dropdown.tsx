@@ -9,20 +9,17 @@ const Dropdown = ({
   text: string | string[];
 }) => {
   let textToShow;
-  const [display, setDisplay] = useState("open");
+  const [display, setDisplay] = useState<"open" | "close">("close");
 
   if (typeof text !== "string") {
     textToShow = text?.map((element, index) => (
-      <div className="dropdown-text" key={index}>
-        {element}
-      </div>
+      <div key={index}>{element}</div>
     ));
   } else {
     textToShow = text;
   }
 
-  const handleClick = () =>
-    display === "open" ? setDisplay("close") : setDisplay("open");
+  const handleClick = () => setDisplay(display === "open" ? "close" : "open");
 
   return (
     <div className="dropdown">
@@ -34,7 +31,7 @@ const Dropdown = ({
           alt="arrow"
         />
       </div>
-      <div className={`dropdown-bottom main-color dropdown-text-${display}`}>
+      <div className={`dropdown-text main-color dropdown-text-${display}`}>
         {textToShow}
       </div>
     </div>

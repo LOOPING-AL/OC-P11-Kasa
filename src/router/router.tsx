@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import APropos from "../component/pages/about/about-page";
+import About from "../component/pages/about/about-page";
 import ErrorPage from "../component/pages/error/error-page";
 import Home from "../component/pages/home/home-page";
 import HousingPage from "../component/pages/housing/housing-page";
@@ -16,8 +16,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "aPropos",
-    element: <APropos />,
+    path: "/aPropos",
+    element: <About />,
   },
 ]);
 

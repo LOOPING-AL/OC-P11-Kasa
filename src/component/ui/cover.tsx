@@ -56,18 +56,23 @@ const Cover = ({ logement }: { logement: Logement }) => {
 
   return (
     <div className="housing-cover">
-      <img
-        src={ArrowLeft}
-        alt={ArrowLeft}
-        className="housing-cover-arrow housing-cover-arrowleft"
-        onClick={() => handleClick("left")}
-      />
-      <img
-        src={ArrowRight}
-        alt={ArrowRight}
-        onClick={() => handleClick("right")}
-        className="housing-cover-arrow housing-cover-arrowright"
-      />
+      {picturesNumber !== 1 && (
+        <>
+          <img
+            src={ArrowLeft}
+            alt={ArrowLeft}
+            className="housing-cover-arrow housing-cover-arrowleft"
+            onClick={() => handleClick("left")}
+          />
+          <img
+            src={ArrowRight}
+            alt={ArrowRight}
+            onClick={() => handleClick("right")}
+            className="housing-cover-arrow housing-cover-arrowright"
+          />
+        </>
+      )}
+
       <div className="housing-cover-images">
         <img
           src={srcFirstImg}
@@ -75,12 +80,15 @@ const Cover = ({ logement }: { logement: Logement }) => {
           id="first"
           className="housing-cover-img"
         />
-        <img
-          src={srcSecondImg}
-          alt={logement.title}
-          id="second"
-          className="housing-cover-img"
-        />
+
+        {picturesNumber !== 1 && (
+          <img
+            src={srcSecondImg}
+            alt={logement.title}
+            id="second"
+            className="housing-cover-img"
+          />
+        )}
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ export const Header = () => (
         </Link>
       </li>
       <li>
-        <Link to={"APropos"}>
+        <Link to={"/APropos"}>
           <h2 className="main-color">A propos</h2>
         </Link>
       </li>

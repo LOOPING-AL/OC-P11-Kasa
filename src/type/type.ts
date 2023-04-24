@@ -15,3 +15,8 @@ interface host {
   name: string;
   picture: string;
 }
+
+export interface aboutData {
+  title: string;
+  text: string;
+}
