@@ -1,5 +1,5 @@
-import Footer from "../../ui/footer";
-import Header from "../../ui/header";
+import Footer from "../../ui/footer/footer";
+import Header from "../../ui/header/header";
 import AboutMainBottom from "./about-main-bottom";
 import AboutMainTop from "./about-main-top";
 

@@ -1,16 +1,17 @@
 import { useParams } from "react-router-dom";
 import data from "../../../data/logements.json";
-import { Logement } from "../../../type/type";
-import Cover from "../../ui/cover";
-import Dropdown from "../../ui/dropdown";
-import Star from "../../ui/star";
-import Tag from "../../ui/tag";
+import { Logement } from "../../../ts/type/type";
+import Cover from "../../ui/cover/cover";
+import Dropdown from "../../ui/dropdown/dropdown";
+import Star from "../../ui/star/star";
+import Tag from "../../ui/tag/tag";
+import styles from "./housing.module.css";
 
 const HousingMainBody = () => {
   const { logementId } = useParams();
   const logements: Logement[] = data;
   const logement = logements.find((logement) => logement.id === logementId);
-
+  
   if (!logement) {
     throw new Response("Id is not correct", {
       status: 404,
@@ -19,24 +20,24 @@ const HousingMainBody = () => {
   }
 
   return (
-    <div className="housing-body">
+    <div className={styles.body}>
       <Cover logement={logement} />
 
-      <section className="housing-section-top">
-        <div className="housing-body-left">
+      <section className={styles.section_top}>
+        <div className={styles.body_left}>
           <h3 className="main-color">{logement.title}</h3>
           <h4 className="main-color">{logement.location}</h4>
 
-          <div className="housing-body-left-tags">
+          <div className={styles.body_left_tags}>
             {logement.tags.map((tag) => {
               return <Tag tag={tag} key={tag} />;
             })}
           </div>
         </div>
 
-        <div className="housing-body-right">
-          <div className="housing-body-righttop">
-            <div className="housing-body-hostname">
+        <div className={styles.body_right}>
+          <div className={styles.body_righttop}>
+            <div className={styles.body_hostname}>
               <h4 className="main-color">
                 {logement.host.name.split(/ (.*)/s)[0]}
               </h4>
@@ -46,23 +47,23 @@ const HousingMainBody = () => {
             </div>
 
             <img
-              className="housing-body-hostpicture"
+              className={styles.body_hostpicture}
               src={logement.host.picture}
               alt={logement.host.name}
             />
           </div>
 
-          <div className="housing-body-middle-rating">
+          <div className={styles.body_middle_rating}>
             {Star(Number(logement.rating))}
           </div>
         </div>
       </section>
 
-      <section className="section-dropdown">
-        <div className="dropdown-left">
+      <section className={styles.section_dropdown}>
+        <div className={styles.dropdown_left}>
           <Dropdown title={"Description"} text={logement.description} />
         </div>
-        <div className="dropdown-right">
+        <div className={styles.dropdown_right}>
           <Dropdown title={"Equipement"} text={logement.equipments} />
         </div>
       </section>

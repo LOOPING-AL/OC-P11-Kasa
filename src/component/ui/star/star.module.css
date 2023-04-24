@@ -1,0 +1,8 @@
+.star {
+  margin-left: 15px;
+}
+
+.star_color {
+  filter: invert(49%) sepia(62%) saturate(3182%) hue-rotate(328deg)
+    brightness(110%) contrast(101%);
+}

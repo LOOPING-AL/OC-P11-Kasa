@@ -1,12 +1,13 @@
 import data from "../../../data/logements.json";
-import { Logement } from "../../../type/type";
-import Thumb from "../../ui/thumb";
+import { Logement } from "../../../ts/type/type";
+import Thumb from "../../ui/thumb/thumb";
+import styles from "./home.module.css";
 
 const HomeMainBottom = () => {
   const logements: Logement[] = data;
 
   return (
-    <div className="home-body">
+    <div className={styles.body}>
       {logements.map((logement: Logement) => {
         return <Thumb logement={logement} key={logement.id} />;
       })}

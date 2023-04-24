@@ -1,15 +1,16 @@
-import Dropdown from "../../ui/dropdown";
 import data from "../../../data/about.json";
-import { aboutData } from "../../../type/type";
+import { aboutData } from "../../../ts/type/type";
+import Dropdown from "../../ui/dropdown/dropdown";
+import styles from "./about.module.css";
 
 const AboutMainBottom = () => {
   const aboutData: aboutData[] = data;
 
   return (
-    <div className="about-main-bottom">
-      {aboutData.map((aboutD) => {
-        return <Dropdown title={aboutD.title} text={aboutD.text} />;
-      })}
+    <div className={styles.main_bottom}>
+      {aboutData.map((aboutD) => (
+        <Dropdown title={aboutD.title} text={aboutD.text} />
+      ))}
     </div>
   );
 };

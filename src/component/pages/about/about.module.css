@@ -1,0 +1,24 @@
+.main_top {
+  display: flex;
+  margin-left: 100px;
+  margin-right: 100px;
+  background-color: black;
+  border-radius: 25px;
+  height: 230px;
+}
+
+.main_img {
+  border-radius: 25px;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+.main_bottom {
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}

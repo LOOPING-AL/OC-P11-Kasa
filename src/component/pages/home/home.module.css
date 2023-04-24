@@ -1,0 +1,39 @@
+.main_title {
+  position: absolute;
+  left: 50%;
+  top: 78px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.main_top {
+  height: 230px;
+  display: flex;
+  position: relative;
+  background-color: black;
+  border-radius: 25px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.main_img {
+  border-radius: 25px;
+  height: 230px;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.body {
+  margin-left: 100px;
+  margin-right: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px 5%;
+  margin-top: 43px;
+  padding-top: 56px;
+  padding-bottom: 56px;
+  padding-right: 50px;
+  padding-left: 50px;
+  background-color: #f7f7f7;
+  border-radius: 25px;
+}

@@ -1,13 +1,14 @@
-import "../../assets/style/App.css";
-import logo from "../../assets/img/logo/LOGO.svg";
+import "../../../assets/style/App.css";
+import logo from "../../../assets/img/logo/LOGO.svg";
 import { Link } from "react-router-dom";
+import styles from "./header.module.css";
 
 export const Header = () => (
-  <header className="header">
+  <header className={styles.header}>
     <Link to={"/"}>
       <img src={logo} alt="logo" />
     </Link>
-    <ul className="header-title">
+    <ul className={styles.header_title}>
       <li>
         <Link to={"/"}>
           <h2 className="main-color">Accueil</h2>
