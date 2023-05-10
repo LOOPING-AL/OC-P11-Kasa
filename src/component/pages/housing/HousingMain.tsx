@@ -1,13 +1,11 @@
 import { useParams } from "react-router-dom";
-import data from "../../../data/logements.json";
-import { Logement } from "../../../ts";
 import { Cover, DropDown, Star, Tag } from "../../index.js";
 import styles from "./Housing.module.css";
+import { getLogement } from "../../../api/api";
 
 const HousingMainBody = () => {
   const { logementId } = useParams();
-  const logements: Logement[] = data;
-  const logement = logements.find((logement) => logement.id === logementId);
+  const logement = logementId && getLogement(logementId);
 
   if (!logement) {
     throw new Response("Id is not correct", {

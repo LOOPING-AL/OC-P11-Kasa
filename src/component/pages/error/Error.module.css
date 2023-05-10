@@ -24,6 +24,12 @@
 .link {
   margin-top: 100px;
   text-decoration: underline;
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
 @media only screen and (max-width: 650px) {

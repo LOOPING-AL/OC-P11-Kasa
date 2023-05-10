@@ -1,10 +1,10 @@
 import { Thumb } from "../..";
-import data from "../../../data/logements.json";
+import { getAllLogements } from "../../../api/api";
 import { Logement } from "../../../ts";
 import styles from "./Home.module.css";
 
 const HomeMainBottom = () => {
-  const logements: Logement[] = data;
+  const logements: Logement[] = getAllLogements();
 
   return (
     <div className={styles.body}>

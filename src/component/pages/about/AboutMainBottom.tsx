@@ -1,10 +1,9 @@
 import { DropDown } from "../..";
-import data from "../../../data/about.json";
-import { AboutData } from "../../../ts";
+import { getAbout } from "../../../api/api";
 import styles from "./About.module.css";
 
 const AboutMainBottom = () => {
-  const aboutData: AboutData[] = data;
+  const aboutData = getAbout();
 
   return (
     <div className={styles.main_bottom}>
