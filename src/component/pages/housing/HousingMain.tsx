@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { Cover, DropDown, Star, Tag } from "../../index.js";
+import { Cover, DropDown, Star, Tag } from "../../";
 import styles from "./Housing.module.css";
 import { getLogement } from "../../../api/api";
 
