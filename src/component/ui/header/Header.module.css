@@ -12,6 +12,13 @@
   list-style-type: none;
   gap: 57px;
 }
+.title:hover {
+  text-decoration: underline;
+}
+
+.underline {
+  text-decoration: underline;
+}
 
 @media only screen and (max-width: 950px) {
   .header {
