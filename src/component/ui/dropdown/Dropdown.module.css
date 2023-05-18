@@ -27,30 +27,31 @@
   width: 24px;
   height: 14px;
   margin-right: 2%;
+  transform: rotate(180deg);
 }
 
 .dropdown_arrow_open {
   animation: dropdown_arrow_bounce_in 0.5s ease-out;
-  transform: rotate(180deg);
+  transform: rotate(0);
 }
 .dropdown_arrow_close {
-  transform: rotate(0);
+  transform: rotate(180deg);
   animation: dropdown_arrow_bounce_out 0.5s ease-out;
 }
 @keyframes dropdown_arrow_bounce_in {
   0% {
-    transform: rotate(0);
+    transform: rotate(180deg);
   }
   100% {
-    transform: rotate(180deg);
+    transform: rotate(0);
   }
 }
 @keyframes dropdown_arrow_bounce_out {
   0% {
-    transform: rotate(180deg);
+    transform: rotate(0);
   }
   100% {
-    transform: rotate(0);
+    transform: rotate(180deg);
   }
 }
 

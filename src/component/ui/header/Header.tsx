@@ -8,7 +8,7 @@ export const Header = () => {
   const isAboutPage = location.pathname === "/APropos";
 
   const titles = [
-    { title: "Acceuil", to: "/", underlined: isHomePage },
+    { title: "Accueil", to: "/", underlined: isHomePage },
     {
       title: "A propos",
       to: "APropos",

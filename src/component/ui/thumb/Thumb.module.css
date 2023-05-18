@@ -1,7 +1,6 @@
 .thumb {
   width: 30%;
   height: 340px;
-  background: linear-gradient(#ff6060, #803030);
   border-radius: 10px;
   transition: all 0.35s ease-in-out;
   position: relative;
@@ -22,10 +21,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
-  background: -webkit-linear-gradient(#ff6060, #803030);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: white;
   bottom: 20px;
   left: 20px;
 }
