@@ -1,24 +1,25 @@
 import { Link, useLocation } from "react-router-dom";
 import { logo_red } from "../../../assets";
 import styles from "./Header.module.css";
+import { pages } from "../../../ts";
 
 export const Header = () => {
   let location = useLocation();
-  const isHomePage = location.pathname === "/";
-  const isAboutPage = location.pathname === "/APropos";
+  const isHomePage = location.pathname === pages.HOME;
+  const isAboutPage = location.pathname === pages.ABOUT;
 
   const titles = [
-    { title: "Accueil", to: "/", underlined: isHomePage },
+    { title: "Accueil", to: pages.HOME, underlined: isHomePage },
     {
       title: "A propos",
-      to: "APropos",
+      to: pages.ABOUT,
       underlined: isAboutPage,
     },
   ];
 
   return (
     <header className={styles.header}>
-      <Link to={"/"}>
+      <Link to={pages.HOME}>
         <img src={logo_red} alt="logo" className={styles.img} />
       </Link>
 

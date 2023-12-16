@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./Error.module.css";
+import { pages } from "../../../ts";
 
 const ErrorMain = () => (
   <div className={styles.main}>
@@ -7,7 +8,7 @@ const ErrorMain = () => (
     <p className={`${styles.text} main-color`}>
       Oups! La page que vous demandez n'existe pas.
     </p>
-    <Link className={`${styles.link} main-color`} to={"/"}>
+    <Link className={`${styles.link} main-color`} to={pages.HOME}>
       Retourner sur la page d’accueil
     </Link>
   </div>
